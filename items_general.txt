@@ -1,0 +1,12 @@
+Teacher’s Keys 
+Can be used to open doors around the building  
+4
+Backpack 
+Can be used to store items
+2
+Healing 
+A first aid kit 
+3
+TextBook
+A math textbook. It can be traded for cure items.
+1

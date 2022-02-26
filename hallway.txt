@@ -1,0 +1,75 @@
+4
+hallway
+Description: Your in the first part of hallway1 : west of you is the gym,to yout eastt iis the computer science room.
+1
+0
+4 
+hallway
+Description: Your in the second part of hallway1 : deeper down the hall The lights are dimmer here so watch your step… to your Left is a math classroom and art is on the right. 
+1
+2
+4
+hallway 
+Description: Your in the last part of hallway1 : This is the end of the hallway. To your west is Engineering, East is Janitors Closets; each give off a noise
+1
+4
+4
+hallway
+Description: Your in the first part of hallway2 : west of you is the cafe,to yout eastt iis the gym.
+3
+0
+4
+hallway
+Description The second part of the hallway2 consists of the courtyard to the left and a math class on the otherdide.
+3
+2
+4
+hallway
+Description: Your in the last part of hallway2 : This is the end of the hallway. To your west is office, East is Engineering; where are you gonna go?
+3 
+4
+4
+hallway
+Description: You made it to the third hallway:  When you first enter west of you are some senior lockers,to yout eastt iis the cafe.
+5
+0
+4
+hallway
+Description: Your in the second part of hallway3 :To your Left is the center of the school and the courtyard is on the right.
+5 
+2
+4
+hallway
+Description: Your in the last part of hallway3 : This is the end of the hallway. To your west are lockers, East is the front office; where are you gonna go?
+5 
+4
+4
+hallway
+Description: You made it to the last hallway!  west of you is the second science room, to yout east is the previouse hallway.
+7 
+0
+4
+hallway
+Description The second part of the hallway consists of a storage unit to the left and. The other side is just a hall.
+7
+2
+4  
+hallway
+Description The last part of hallway 4 has a 9th grade science to the left, and freshmen lockers to thr right.
+7
+4
+4
+Locker 2 
+Description You are in Mr. Kramlich's room. All the Computers are lined on the wall and the screens are facing the inner part of the room
+6
+4
+4
+Connect room top
+Top room that connects the science  class rooms go south or go north
+8
+1
+4
+Connect Room bottom
+Bottom room that connects the science  class rooms go south or go north
+8
+3

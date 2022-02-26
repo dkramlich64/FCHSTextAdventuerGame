@@ -1,0 +1,12 @@
+Baseball Bat 
+Blunt force weapon can deal damage to enemy
+3.5
+Pencils and pens
+can be used to write notes or turned into weapons
+1
+Scissor
+used to stab enemies
+2.5
+Fire Extinguisher
+Can knock enemies out from behind
+2

@@ -1,0 +1,15 @@
+Football Helmet 
+A varsity football helmet with a visor and extra thick bars.
+1
+Football Chestplate 
+A varisty football chestplate used to cover torso attacks. It is made from plastic.
+2
+Lacrosse Goggles 
+Face covering goggles with no lens and metal bars for eye protection.
+1.5
+Lacrosse Gauntlets 
+Extra thick gloves made from twill cotton and extra padding on the palms and fingers. 
+0.5
+Knee Pads
+Knee pads made from heavyweight plastic covers  
+1

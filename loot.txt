@@ -1,0 +1,42 @@
+2 
+Locker one
+Description You are in Mr. Kramlich's room. All the Computers are lined on the wall and the screens are facing the inner part of the room
+6
+0
+Scissor
+2 
+Math
+You walk into class seeing rulers grown all over and math textbooks ripped up. You are in a math class and see a flipped desk in the back.You are in the Math Classroom it appears to be empty.In front of you are desks pushed together to form tablesTo your left is the teacher's desk.To you right is a long cabinet connected to a bookcase.(Look)You check the student’s and teacher’s desk but no sign of a math textbook.You walk over to the bookcase to try and find the text book. You do not see it there either. Finally you check the cabinet… it’s locked (the player can use the keys the got from the chem teacher)You use the keys to unlock the cabinet and find the textbook(if player does not have keys in the inventory)*It’s locked. You need keys.*
+2
+2
+TextBook
+2 
+Chem Storage  
+You unlock the door and see a bunch of chem tubes and liquids. And another door leading to another room You find a clear bottle marked with the word Magnesium. And you hear some quiet whispers in the next room. 
+8
+2
+Magnesium
+2 
+Art Room 
+You're in the art room and see movement under one of the art tables.
+0
+2
+Pencils and pens
+2 
+Janitors Closet 
+Behind you is the door you came in. to your right is janitor supplies and to your left is more cleaning supplies. In front of you You see Marissa in the back left corner sitting on the floor against the wall, next to the janitor's desk with her head on her knees.
+0
+4
+Iodine 
+2 
+Chemistry Class two  
+You see huddled in the back a group of students and a chem teacher holding scissors
+8
+4 
+Fire Extigisher
+2
+Gym Storage
+This room is a small room filled with equipment, weights, and boards filled with written plays.You made it to the gym storage and saw a bunch of equipment that might fit you. 
+2
+1
+Football Helmet, Football Chestplate, Lacrosse Goggles,Lacrosse Gauntlets,Knee Pads 

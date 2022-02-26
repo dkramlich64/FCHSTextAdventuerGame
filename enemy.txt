@@ -1,0 +1,16 @@
+Teacher Monster
+Blue humanoid Creature sporting a ripped suit and tie.
+3 
+1
+Principle Monster
+A larger monster, blind in one eye, yellow teeth, bugs swarming around him.
+10
+2
+Student Monster
+Average size typical students, 5'10" in a ripped shirt and jeans, foaming at the mouth. They are pink with green spots sprinkled around their bodies.
+1.5
+0.5
+Gym Coach Mini Boss Monster
+He sports a dark purple tone with green stripes going along his face. With bright yellow eyes.WIth his whistle you can always tell when he is close.
+5
+1.5

@@ -1,0 +1,30 @@
+1
+Computer Science
+Behind you is the door leading into the hallway.To your left are the Marley twins. To your right is Ms.Cackle. In front of you are desks and chairs 
+0
+0
+Ms. Cackle and Students
+1
+Cafeteria
+You are in the cafeteria and see a bunch of infected roaming around and eating the food. 
+4
+0
+Lots of infected 
+1 
+Gym 
+To your right there are gym equipment and mats.You hear an ear splitting whistle screech.
+2
+0
+To your left you see the gym teacher, Coach Walker, he has a deep purple skin with green stripes streaking across his face. His eyes are bright yellow, he must be infected too. 
+1 
+Science Class one 
+Description Once you enter the dim room on the other side of the room  see a normal hunched human figure 
+8
+0
+A medium size blue humanoid Creature sporting a ripped suit and tie is trailing around with very sharp claws.
+1 
+Engineering Room  
+You open the door to a ransacked room with computers turned over 3-D printers. On your right you see workshop desks.In front of you see woodwork equipment: bandsaw, drills, sanders, etc. Behind you is the door you came through.
+2
+4
+To your left you see a first aid kit on the wall but an infected student is standing in front of it.
