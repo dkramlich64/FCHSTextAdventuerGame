@@ -1,4 +1,6 @@
 "This is the NPC class, it includes the name and description pramaters."
+
+
 class NPC:
     def __init__(self, name, description):
         self.name = name

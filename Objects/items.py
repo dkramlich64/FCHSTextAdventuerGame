@@ -1,5 +1,6 @@
 "This section is dedicated to the items section multipe item classes are listed here such as: treasure,healing,Armor,Cure, Weapons"
 
+
 class Item:
     def __init__(self, name, description):
         self.name = name
@@ -13,9 +14,10 @@ class Item:
 
 
 class Armor(Item):
-    def __init__(self,name, description, hp):
+    def __init__(self, name, description, hp):
         self.hp = hp
         super().__init__(name, description)
+
     def __str__(self):
         armorStr = ""
         armorStr += "(Armor) Name: " + self.name + "\n (Armor) Description: " + self.description + "\n"
@@ -36,6 +38,7 @@ class Weapons(Item):
         weaponStr = weaponStr + "(Weapon) Damage: " + str(self.damage) + "\n"
         return weaponStr
 
+
 class Cures(Item):
     def __init__(self, name, description):
         self.name = name
@@ -47,10 +50,12 @@ class Cures(Item):
         cureStr = cureStr + "(Cure) Description: " + self.description + "\n"
         return cureStr
 
+
 class Gen(Item):
-    def __init__(self,name, description, value):
+    def __init__(self, name, description, value):
         self.value = value
         super().__init__(name, description)
+
     def __str__(self):
         genStr = ""
         genStr += "(General Items) Name: " + self.name + "\n (General Items) Description: " + self.description + "\n"

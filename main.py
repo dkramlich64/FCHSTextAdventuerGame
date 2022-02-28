@@ -1,31 +1,41 @@
-from items import Weapons, Armor, Cures, Item, Gen
+from Objects.items import Weapons, Armor, Cures, Item, Gen
 
-from enemies import Enemy
+from Objects.enemies import Enemy
 
-from npc import NPC
+from Objects.npc import NPC
 
-from player import player, movement, inventory
+from Objects.player import player, movement, inventory
 
-from map import EnemyRoom, LootandEnemy, LootRoom, Hallway
+from Objects.map import EnemyRoom, LootandEnemy, LootRoom, Hallway
 
 import os
-
 """ Function: clearConsole
     Purpose: Clear the console screen
 """
+
+
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
+
+
 """ Function: introduction
     Purpose: Print out the introduction and set the scene
 """
+
+
 def introduction():
     print(f"Welcome {player1}!!!\n")
-    print("You are in Ms Cackle's room. All the Computers are lined on the wall and the screens are facing the inner part of the room.\n\nIt’s 12:30 PM, lunch time, and you’re supposed to be in the cafeteria but instead you are spending it in the computer science room. Lunch detention is always the worst. Waiting in silence for an hour, the only noise you hear is an occasional cough and the clock on the wall ticking. Unfortunately for you, you got stuck with the Marley twins who only know how to chew with their mouths open and your desk is right next to  Ms. Cackle, the Computer Science teacher. You decide to count the number of ants coming from a crack in the wall to a piece of candy that was discarded on the floor. '12, 13, 14...'\n\nPress <enter> to continue:")
+    print(
+        "You are in Ms Cackle's room. All the Computers are lined on the wall and the screens are facing the inner part of the room.\n\nIt’s 12:30 PM, lunch time, and you’re supposed to be in the cafeteria but instead you are spending it in the computer science room. Lunch detention is always the worst. Waiting in silence for an hour, the only noise you hear is an occasional cough and the clock on the wall ticking. Unfortunately for you, you got stuck with the Marley twins who only know how to chew with their mouths open and your desk is right next to  Ms. Cackle, the Computer Science teacher. You decide to count the number of ants coming from a crack in the wall to a piece of candy that was discarded on the floor. '12, 13, 14...'\n\nPress <enter> to continue:"
+    )
     input()
-    print("All of a sudden you hear -\n\t\t*ALARM SOUNDS*\n\t\tCODE RED.\n\t\tCODE RED.\n\n We are now under lock down. Please remain calm and follow through with the proper procedures.\n\nYou snap your head up from your line of ants to see Ms. Cackle stand up from her desk to only fall back down into her chair. She starts to convulse and groan. Her skin begins to get a bluish hue and her nails start to turn into sharp claws. You hear pained moans to you right. You slowly turn your head to the Marley twins foaming at the mouth. Their skin is a bright pink with large green blotches littering  their bodies. In a panic you grab the scissors off of your teachers desk and run to the middle of the room.\n\nIn front of you is the door leading into the hallway.  To your right are the Marley twins. To your left is Ms.Cackle.\n")
+    print(
+        "All of a sudden you hear -\n\t\t*ALARM SOUNDS*\n\t\tCODE RED.\n\t\tCODE RED.\n\n We are now under lock down. Please remain calm and follow through with the proper procedures.\n\nYou snap your head up from your line of ants to see Ms. Cackle stand up from her desk to only fall back down into her chair. She starts to convulse and groan. Her skin begins to get a bluish hue and her nails start to turn into sharp claws. You hear pained moans to you right. You slowly turn your head to the Marley twins foaming at the mouth. Their skin is a bright pink with large green blotches littering  their bodies. In a panic you grab the scissors off of your teachers desk and run to the middle of the room.\n\nIn front of you is the door leading into the hallway.  To your right are the Marley twins. To your left is Ms.Cackle.\n"
+    )
+
 
 npcs = []
 
@@ -36,40 +46,41 @@ Cures_1 = []
 items = []
 All_Items = []
 world_map = []
-
 """ Function: read_items
     Purpose: read all of the items from the specific files
             and load the information into All_Items
 """
+
+
 def read_items():
     #reading from the items_general.txt file
-    fo = open("items_general.txt")
+    fo = open("Objects/Data/items_general.txt")
     items_lines = fo.readlines()
     fo.close()
     #==================================================
     #reading from the items_armor.txt file
-    fo = open("items_cure.txt")
+    fo = open("Objects/Data/items_cure.txt")
     cure_lines = fo.readlines()
     fo.close()
     #=====================================================
     #reading from the items_armor.txt file
-    fo = open("items_armor.txt")
+    fo = open("Objects/Data/items_armor.txt")
     armors_lines = fo.readlines()
     fo.close()
     #=====================================================
     #reading from the npc.txt file
-    fo = open("npc.txt")
+    fo = open("Objects/Data/npc.txt")
     npc_lines = fo.readlines()
     fo.close()
     #=====================================================
     #reading lines from items_weapons.tct
-    fo = open("items_weapons.txt")
+    fo = open("Objects/Data/items_weapons.txt")
     weapons_lines = fo.readlines()
     fo.close()
     #=====================================================
 
     #reading from enemy.txt file
-    fo = open("enemy.txt")
+    fo = open("Objects/Data/enemy.txt")
     enemies_lines = fo.readlines()
     fo.close()
     #=====================================================
@@ -172,10 +183,13 @@ def read_items():
     All_Items.extend(Cures_1)
     All_Items.extend(items)
 
+
 """ Function: read_rooms
     Purpose: read the room from the specific files and load the 
             data into world_map
 """
+
+
 def read_rooms():
     """These constants sets the room types to a numerical value so that we don't have to change it to an int later"""
     ENEMY_ROOM = 1
@@ -183,19 +197,19 @@ def read_rooms():
     LOOT_ENEMY = 3
     HALLWAY = 4
     """These allow us to read from the txt files and sets the data gathered from them to a variable"""
-    fo = open("loot.txt")
+    fo = open("Objects/Data/loot.txt")
     loot_room = fo.readlines()
     fo.close()
 
-    fo = open("lootandenemy.txt")
+    fo = open("Objects/Data/lootandenemy.txt")
     lootandenemy = fo.readlines()
     fo.close()
 
-    fo = open("hallway.txt")
+    fo = open("Objects/Data/hallway.txt")
     hall = fo.readlines()
     fo.close()
 
-    fo = open("enemyR.txt")
+    fo = open("Objects/Data/enemyR.txt")
     enemyR = fo.readlines()
     fo.close()
 
@@ -253,9 +267,11 @@ def read_rooms():
         new_tile = EnemyRoom(typeRoom, name, des, x, y, enemy)
         world_map.append(new_tile)
 
+
 def read_data_files():
     read_items()
     read_rooms()
+
 
 in_room = True
 z = True
@@ -273,6 +289,7 @@ def location():
         if (player == map):
             print("Room:", world.getName())
             print(world.getDes())
+
 
 """ ====== Main Program ====== """
 while True:
@@ -305,10 +322,10 @@ while True:
             in_room = True
             q = not q
             z = not z
-    
+
     elif 'help' in response:
         player.print_help()
-    
+
     elif 'inv' in response:
         inven.check()
 
@@ -326,4 +343,6 @@ while True:
             move.east()
 
     elif 'north' in response or 'south' in response or 'west' in response or 'east' in response:
-        print("You cannot do that right now. You are within a room!  Try 'exit' first")
+        print(
+            "You cannot do that right now. You are within a room!  Try 'exit' first"
+        )

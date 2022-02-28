@@ -9,7 +9,7 @@ enemies = []
 weapons = []
 armors = []
 Cures_1 = []
-items = [] 
+items = []
 
 #reading from the items_general.txt file
 fo = open("items_general.txt")
@@ -55,9 +55,9 @@ Enemy Index
 """
 for i in range(0, len(enemies_lines), 4):
     name = enemies_lines[i].rstrip()
-    description = enemies_lines[i+1].rstrip()
-    hp = float(enemies_lines[i+2].rstrip())
-    damage = float(enemies_lines[i+3].rstrip())
+    description = enemies_lines[i + 1].rstrip()
+    hp = float(enemies_lines[i + 2].rstrip())
+    damage = float(enemies_lines[i + 3].rstrip())
     new_enemy = Enemy(name, description, hp, damage)
     enemies.append(new_enemy)
 
@@ -72,7 +72,7 @@ Npc index
 """
 for i in range(0, len(npc_lines), 2):
     name = npc_lines[i].rstrip()
-    description = npc_lines[i+1].rstrip()
+    description = npc_lines[i + 1].rstrip()
     new_npc = NPC(name, description)
     npcs.append(new_npc)
 
@@ -86,8 +86,8 @@ Fire_Extigisher
 """
 for i in range(0, len(weapons_lines), 3):
     name = weapons_lines[i].rstrip()
-    description = weapons_lines[i+1].rstrip()
-    damage = float(weapons_lines[i+2].rstrip())
+    description = weapons_lines[i + 1].rstrip()
+    damage = float(weapons_lines[i + 2].rstrip())
     new_weapon = Weapons(name, description, damage)
     weapons.append(new_weapon)
 
@@ -102,8 +102,8 @@ Armor Index
 """
 for i in range(0, len(armors_lines), 3):
     name = armors_lines[i].rstrip()
-    description = armors_lines[i+1].rstrip()
-    hp = float(armors_lines[i+2].rstrip())
+    description = armors_lines[i + 1].rstrip()
+    hp = float(armors_lines[i + 2].rstrip())
     new_armor = Armor(name, description, hp)
     armors.append(new_armor)
 
@@ -118,7 +118,7 @@ Cure Index
 """
 for i in range(0, len(cure_lines), 2):
     name = cure_lines[i].rstrip()
-    description = cure_lines[i+1].rstrip()
+    description = cure_lines[i + 1].rstrip()
     new_cure = Cures(name, description)
     Cures_1.append(new_cure)
 
@@ -132,27 +132,27 @@ Items Index
 """
 for i in range(0, len(items_lines), 3):
     name = items_lines[i].rstrip()
-    description = items_lines[i+1].rstrip()
-    value = float(items_lines[i+2].rstrip())
+    description = items_lines[i + 1].rstrip()
+    value = float(items_lines[i + 2].rstrip())
     new_items = Item(name, description, value)
     items.append(new_items)
 
 #====================================================
 
 for armor in armors:
-  print(armor)
+    print(armor)
 
 for cure in Cures_1:
-  print(cure)
+    print(cure)
 
 for weapons in weapons:
-   print(weapons)
+    print(weapons)
 
 for npc in npcs:
-  print(npc)
+    print(npc)
 
 for enemy in enemies:
-  print(enemy)
+    print(enemy)
 
 for item in items:
-  print(item)
+    print(item)
