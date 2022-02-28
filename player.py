@@ -4,6 +4,11 @@ class player:
   
     #self.health = 4
 		#self.armor = 0
+
+  def print_help():
+    print('Please try one of the following commands: north, south, east, west, enter, exit, inventory or quit to quit the game.\n\n')
+
+
 class movement(player):
   def __init__(self):
     self.x = 0
@@ -20,7 +25,7 @@ class movement(player):
     move = False
     for room in self.rooms: 
       if (self.x,(self.y-1)) == room:
-        print("Thou cannot doith that rightify now. Thy room blocketh thy way.")
+        print("You cannot do that right now. The room blocks the way!")
         move = True
         break
     if (self.y - 1 < 0 or move):
@@ -40,7 +45,7 @@ class movement(player):
     move = False
     for room in self.rooms: 
       if (self.x,(self.y+1)) == room:
-        print("Thou cannot doith that rightify now. Thy room blocketh thy way.")
+        print("You cannot do that right now. The room blocks the way!")
         move = True
         break
     if (self.y + 1 > 4 or move):
@@ -58,7 +63,7 @@ class movement(player):
     move = False
     for room in self.rooms: 
       if ((self.x-1),self.y) == room:
-        print("Thou cannot doith that rightify now. Thy room blocketh thy way.")
+        print("You cannot do that right now. The room blocks the way!")
         move = True
         break
     if (self.x - 1 < 0 or move):
@@ -77,7 +82,7 @@ class movement(player):
     move = False
     for room in self.rooms: 
       if ((self.x+1),self.y) == room:
-        print("Thou cannot doith that rightify now. Thy room blocketh thy way.")
+        print("You cannot do that right now. The room blocks the way!")
         move = True
         break
     if (self.x + 1 > 9 or move):
@@ -91,12 +96,12 @@ class movement(player):
       if ((self.x),self.y) == room:
         if (self.x != 8):
           self.x += 1 
-          print("You have exit a room")
+          print("You have exited a room")
           print("Your location is area: " + '('+ str(self.x) + ','+ str(self.y) + ')' + " in the x direction")
           return True
         else:
           self.x -= 1
-          print("You have exit a room")
+          print("You have exited a room")
           print("Your location is area: " + '('+ str(self.x) + ','+ str(self.y) + ')' + " in the x direction")
           return True
 
@@ -105,12 +110,12 @@ class movement(player):
       if self.x != 7: 
         if ((self.x - 1) == room[0] and self.y == room[1]):
           self.x -= 1
-          print("You have enter a room")
+          print("You have entered a room")
           print("Your location is area: " + '('+ str(self.x) + ','+ str(self.y) + ')' + " in the x direction")
           return False
       elif self.y == 0 or self.y == 2 or self.y == 4:
         self.x += 1
-        print("You have enter a room")
+        print("You have entered a room")
         print("Your location is area: " + '('+ str(self.x) + ','+ str(self.y) + ')' + " in the x direction")
         return False
      
@@ -144,7 +149,8 @@ class inventory(player):
   def check(self):
     print("Your inventory consists of.")
     for i in self.inventory:
-      print('\t',i)  
+      print('\t',i) 
+    print("\n\n") 
       
   '''
   check

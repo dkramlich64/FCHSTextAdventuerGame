@@ -10,15 +10,22 @@ from map import EnemyRoom, LootandEnemy, LootRoom, Hallway
 
 import os
 
-
+""" Function: clearConsole
+    Purpose: Clear the console screen
+"""
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
-
-
-beginning = "Description: You are in Mr. Kramlich's room. All the Computers are lined on the wall and the screens are facing the inner part of the room. Beginning: It’s 12:30 , lunch time, and you’re supposed to be in the cafeteria but instead you are spending it in the computer science room. Lunch detention is always the worst. Waiting in silence for an hour , the only noise you hear is an occasional cough and the clock on the wall ticking. Unfortunately for you , you got stuck with the Marley twins who only know how to chew with their mouths open and your desk is right next to  Ms. Cackle , the computer science teacher. You decide to count the number of ants coming from a crack in the wall to a piece of candy that was discarded on the floor. “12, 13, 14 -”*alarm sound* *Code red. Code red. We are now under lock down. Please remain calm and follow through with the proper procedures*You snap your head up from your line of ants to see Ms. Cackle stand up from her desk to only fall back down into her chair. She starts to convulse and groan. Her skin begins to get a bluish hue and her nails start to turn into sharp claws.You hear pained moans to you right. You slowly turn your head to the Marley twins foaming at the mouth. Their skin is a bright pink with large green blotches littering  their bodies. In a panic you grab the scissors off of your teachers desk and run to the middle of the room.In front of you is the door leading into the hallway.To your right are the Marley twinsTo your left is Ms.Cackle"
+""" Function: introduction
+    Purpose: Print out the introduction and set the scene
+"""
+def introduction():
+    print(f"Welcome {player1}!!!\n")
+    print("You are in Ms Cackle's room. All the Computers are lined on the wall and the screens are facing the inner part of the room.\n\nIt’s 12:30 PM, lunch time, and you’re supposed to be in the cafeteria but instead you are spending it in the computer science room. Lunch detention is always the worst. Waiting in silence for an hour, the only noise you hear is an occasional cough and the clock on the wall ticking. Unfortunately for you, you got stuck with the Marley twins who only know how to chew with their mouths open and your desk is right next to  Ms. Cackle, the Computer Science teacher. You decide to count the number of ants coming from a crack in the wall to a piece of candy that was discarded on the floor. '12, 13, 14...'\n\nPress <enter> to continue:")
+    input()
+    print("All of a sudden you hear -\n\t\t*ALARM SOUNDS*\n\t\tCODE RED.\n\t\tCODE RED.\n\n We are now under lock down. Please remain calm and follow through with the proper procedures.\n\nYou snap your head up from your line of ants to see Ms. Cackle stand up from her desk to only fall back down into her chair. She starts to convulse and groan. Her skin begins to get a bluish hue and her nails start to turn into sharp claws. You hear pained moans to you right. You slowly turn your head to the Marley twins foaming at the mouth. Their skin is a bright pink with large green blotches littering  their bodies. In a panic you grab the scissors off of your teachers desk and run to the middle of the room.\n\nIn front of you is the door leading into the hallway.  To your right are the Marley twins. To your left is Ms.Cackle.\n")
 
 npcs = []
 
@@ -30,8 +37,11 @@ items = []
 All_Items = []
 world_map = []
 
-
-def readtxt():
+""" Function: read_items
+    Purpose: read all of the items from the specific files
+            and load the information into All_Items
+"""
+def read_items():
     #reading from the items_general.txt file
     fo = open("items_general.txt")
     items_lines = fo.readlines()
@@ -132,7 +142,7 @@ def readtxt():
   1 = Magnesium
   2 = Iodine 
   3 = Cortizone 
-  4 = Wite out
+  4 = White out
   """
     for i in range(0, len(cure_lines), 2):
         name = cure_lines[i].rstrip()
@@ -161,6 +171,12 @@ def readtxt():
     All_Items.extend(armors)
     All_Items.extend(Cures_1)
     All_Items.extend(items)
+
+""" Function: read_rooms
+    Purpose: read the room from the specific files and load the 
+            data into world_map
+"""
+def read_rooms():
     """These constants sets the room types to a numerical value so that we don't have to change it to an int later"""
     ENEMY_ROOM = 1
     LOOT_ROOM = 2
@@ -237,21 +253,15 @@ def readtxt():
         new_tile = EnemyRoom(typeRoom, name, des, x, y, enemy)
         world_map.append(new_tile)
 
-    #this sorts world_map and then prints it out
-    #world_map.sort()
+def read_data_files():
+    read_items()
+    read_rooms()
 
-    #this prints out the whole map
-    """for map in world_map:
-    print(map)"""
-
-    #====================================================
-
-
-in_room = False
+in_room = True
 z = True
 q = False
 start = 0
-readtxt()
+read_data_files()
 move = movement()
 inven = inventory()
 
@@ -264,32 +274,30 @@ def location():
             print("Room:", world.getName())
             print(world.getDes())
 
-
+""" ====== Main Program ====== """
 while True:
     if start == 0:
-        player1 = input("What is your player's name. ")
+        player1 = input("What is your name? ")
         play = player(player1)
-        print(beginning)
+        introduction()
         start += 1
     location()
-    response = input()
+    response = input("\nEnter a command: ").lower()
     clearConsole()
-    response = response.lower()
-    if response == 'quit':
-        print("To confirm type quit again to quit.")
-        response = input()
-        response = response.lower()
-        if response == 'quit':
+    if 'quit' in response:
+        response = input("To confirm type quit again to quit.").lower()
+        response = response
+        if 'quit' in response:
             break
 
-    if response == 'exit room' or response == 'exit':
+    elif 'exit' in response:
         in_room = move.exit()
         in_room = True
         if z:
             q = not q
             z = not z
 
-    if response == 'enter room' or response == 'enter':
+    elif 'enter' in response:
         in_room = move.enter()
         in_room = False
         if q:
@@ -297,21 +305,25 @@ while True:
             in_room = True
             q = not q
             z = not z
+    
+    elif 'help' in response:
+        player.print_help()
+    
+    elif 'inv' in response:
+        inven.check()
 
-    if in_room:
-        if response == 'go north' or response == 'north':
+    if not in_room:
+        if 'north' in response:
             move.north()
 
-        if response == 'go south' or response == 'south':
+        elif 'south' in response:
             move.south()
 
-        if response == 'go west' or response == 'west':
+        elif 'west' in response:
             move.west()
 
-        if response == 'go east' or response == 'east':
+        elif 'east' in response:
             move.east()
 
-    elif response == 'go north' or response == 'north' or response == 'go south' or response == 'south' or response == 'go west' or response == 'west' or response == 'go east' or response == 'east':
-        print(
-            "Thou cannot doith that rightify now. Thou art located within thy room!"
-        )
+    elif 'north' in response or 'south' in response or 'west' in response or 'east' in response:
+        print("You cannot do that right now. You are within a room!  Try 'exit' first")
